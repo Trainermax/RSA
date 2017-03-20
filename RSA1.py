@@ -11,6 +11,7 @@ LUI_decryption = dict()
 def encrypt_message(msg):
     e = int(e2.get())
     n = int(e1.get())
+
     print msg
     encrypted_msg = ""
     for i in msg: 
@@ -50,6 +51,8 @@ def openfileW():
         f.close()
         
 def startcodon():
+    if  len(e2.get()) or len(e1.get()) == 0:
+        tkMessageBox.showinfo("Title", "a Tk MessageBox")
     message = t1.get("1.0", END)
     final_encrypted_message =encrypt_message(message)
     t1.delete("1.0", END)
