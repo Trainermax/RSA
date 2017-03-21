@@ -29,30 +29,29 @@ def decrypt_message(msg):
     n = 11911
     decrypted_msg = ""
     for i in msg: 
-        if i in LUI_decryption:
-            decrypted_msg += LUI_decryption[i]
+        if i in LUI_encryption:
+            decrypted_msg += LUI_encryption[i]
         else:
             numberize = ord(i)
             encrypt = pow(numberize, d, n)
-            LUI_decryption[i] = unichr(encrypt)
+            LUI_encryption[i] = unichr(encrypt)
             decrypted_msg += unichr(encrypt)
-    return decrypted_msg
-    
+    return decrypted_msg    
+
 
 def openfileR():
     f = open("Readme.txt", "r")
     for line in f:
-        listbox1.insert(END,line)
+        t1.delete("1.0", END)
+        t1.insert("1.0", line)
 def openfileW():
     f = open("Readme.txt", 'w')
-    names = listbox1.get(0,END)
-    for i in names:
-        f.write(i + "\n")
-        f.close()
-        
+    f.write(t1.get("1.0", END))
+    f.close()
+   
 def startcodon():
-    if  len(e2.get()) or len(e1.get()) == 0:
-        tkMessageBox.showinfo("Title", "a Tk MessageBox")
+    if len(t1.get()) == 0:
+        tkMessageBox.showinfo("Error","No input in text")
     message = t1.get("1.0", END)
     final_encrypted_message =encrypt_message(message)
     t1.delete("1.0", END)
@@ -63,7 +62,8 @@ def endcodon():
     t2.delete("1.0", END)
     t2.insert("1.0", decrypt_message(message))
     
-        
+def directions():
+    tkMessageBox.showinfo("Directions","Hello. The N value is derived from multiplying two prime numbers, withthe e value being any prime number that is not divisible by either of the two prime numbers or greater than the n value The set is (n , e) for public keys. Plug in n, e, thentype text into the textbox and hit Encrypt to see the message that is constructed using that public key")
  
     
     
@@ -101,6 +101,9 @@ filemenu.add_separator()
 filemenu.add_command(label="Exit", command=root.destroy)
 menubar.add_cascade(label="File", menu=filemenu)
 
+filemenu1 = Menu(menubar, tearoff=0)
+filemenu1.add_command(label="Open", command=directions)
+menubar.add_cascade(label="Directions", menu=filemenu1)
 
 root.config(menu=menubar)
 
