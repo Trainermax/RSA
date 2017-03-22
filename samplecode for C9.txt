@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       	<meta charset="utf-8">
+		
+		<title>TicTacToe Tkinter</title>
+		
+		<style type="text/css">
+			
+			body{
+				background-color:rgb(0,150,100);
+			}
+			
+			h1{
+				font-size: 200%;
+				white-space: nowrap;
+			}
+			img {
+    display: block;
+    margin: 0 auto;
+}
+		</style>
+    </head>
+    <body> 
+<h1><a href="index.html" >Home</a>
+  		<a href="100.html">100%</a>
+  		<a href="textstory.html"> TextStory </a>
+  		<a href="Tkinter.html"> Tkinter </a>
+  		<a href="RSA.html"> RSA </a></h1>
+  		
+  		<h1>Tkinter - RSA</h1>
+	<h2>Written Response</h2>
+	<p>The RSA Project was coded in python. Using two dropdown menus, text boxes, entry1 and entry2, a LUI decryption and encryption code with ASCII characters and numerized, 
+	Button 1 and Button 2 for encrypt and decrypt to get code in text and apply it to the LUI decryption or encryption. 
+	the N value is derived from multiplying two prime numbers, withthe e value being any prime number that is not 
+	divisible by either of the two prime numbers or greater than the n value The set is (n , e) for public keys. 
+	Plug in n, e, thentype text into the textbox and hit Encrypt to see the message that is constructed using that public key</p>
+	
+	<p> Link to github repository: https://github.com/Trainermax/RSA/ </p>

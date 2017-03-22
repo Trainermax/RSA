@@ -50,8 +50,6 @@ def openfileW():
     f.close()
    
 def startcodon():
-    if len(t1.get()) == 0:
-        tkMessageBox.showinfo("Error","No input in text")
     message = t1.get("1.0", END)
     final_encrypted_message =encrypt_message(message)
     t1.delete("1.0", END)
